@@ -21,11 +21,11 @@ export class InterceptorService implements HttpInterceptor {
       const tokenizedReq = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + this.token) });
       return next.handle(tokenizedReq).pipe(map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
-          if (event.status === 401 || event.status === 403) {
-            this.authService.LogOut();
+          if (event.status === 501 || event.status === 403) {
+         //   this.authService.LogOut();
             this.router.navigateByUrl('/login');
           }else{
-            alert("error = "+event.status);
+           // alert("error = "+event.status);
           }
         }
         return event;
