@@ -1,0 +1,15 @@
+<p>login works!</p>
+<div class="col-md-4 mx-auto p-2 bg-light shadow rounded justify-contents-center">
+  <form class="w-100 row justify-contents-center m-0" [formGroup]="loginForm">
+    <mat-form-field>
+      <mat-label appearance="fill">user name :</mat-label>
+      <input matInput formControlName="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label appearance="fill">password :</mat-label>
+      <input matInput formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="col-md-6 mx-auto" type="button" (click)="checkAuthentication()"
+      [disabled]="signBtn">login</button>
+  </form>
+</div>
